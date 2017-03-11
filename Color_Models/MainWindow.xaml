@@ -1,0 +1,41 @@
+﻿<Window x:Class="Color_Models.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Color_Models"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1200">
+    <Grid x:Name="demonstration_grid">
+        <Slider x:Name="r_slider" HorizontalAlignment="Left" Margin="452,82,0,0" VerticalAlignment="Top" Height="25" Width="255" ValueChanged="rgb_slider_ValueChanged" Maximum="255" MouseEnter="rgb_slider_MouseEnter" MouseLeave="rgb_slider_MouseLeave"/>
+        <Slider x:Name="g_slider" HorizontalAlignment="Left" Margin="452,112,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="255" ValueChanged="rgb_slider_ValueChanged" MouseEnter="rgb_slider_MouseEnter" MouseLeave="rgb_slider_MouseLeave"/>
+        <Slider x:Name="b_slider" HorizontalAlignment="Left" Margin="452,137,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="255" ValueChanged="rgb_slider_ValueChanged" MouseEnter="rgb_slider_MouseEnter" MouseLeave="rgb_slider_MouseLeave"/>
+        <Label x:Name="r_label" Content="R" HorizontalAlignment="Left" Margin="434,79,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="g_label" Content="G" HorizontalAlignment="Left" Margin="433,106,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="b_label" Content="B" HorizontalAlignment="Left" Margin="434,134,0,0" VerticalAlignment="Top"/>
+
+        <Slider x:Name="c_slider" HorizontalAlignment="Left" Margin="452,182,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="1" ValueChanged="cmy_slider_ValueChanged" LargeChange="0.1" MouseEnter="cmy_slider_MouseEnter" MouseLeave="cmy_slider_MouseLeave"/>
+        <Slider x:Name="m_slider" HorizontalAlignment="Left" Margin="452,212,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="1" LargeChange="0.1" ValueChanged="cmy_slider_ValueChanged" MouseEnter="cmy_slider_MouseEnter" MouseLeave="cmy_slider_MouseLeave"/>
+        <Slider x:Name="y_slider" HorizontalAlignment="Left" Margin="452,237,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="1" ValueChanged="cmy_slider_ValueChanged" LargeChange="0.1" MouseEnter="cmy_slider_MouseEnter" MouseLeave="cmy_slider_MouseLeave"/>
+        <Label x:Name="c_label" Content="C" HorizontalAlignment="Left" Margin="433,179,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="m_label" Content="M" HorizontalAlignment="Left" Margin="432,206,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="y_label" Content="Y" HorizontalAlignment="Left" Margin="434,234,0,0" VerticalAlignment="Top"/>
+
+        <Slider x:Name="h_slider" HorizontalAlignment="Left" Margin="454,282,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="359" ValueChanged="hsv_slider_ValueChanged" MouseEnter="hsv_slider_MouseEnter" MouseLeave="hsv_slider_MouseLeave"/>
+        <Slider x:Name="s_slider" HorizontalAlignment="Left" Margin="454,312,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="1" LargeChange="0.1" ValueChanged="hsv_slider_ValueChanged" MouseEnter="hsv_slider_MouseEnter" MouseLeave="hsv_slider_MouseLeave"/>
+        <Slider x:Name="v_slider" HorizontalAlignment="Left" Margin="454,337,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="1" ValueChanged="hsv_slider_ValueChanged" LargeChange="0.1" MouseEnter="hsv_slider_MouseEnter" MouseLeave="hsv_slider_MouseLeave"/>
+        <Label x:Name="h_label" Content="H" HorizontalAlignment="Left" Margin="435,279,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="s_label" Content="S" HorizontalAlignment="Left" Margin="436,306,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="v_label" Content="V" HorizontalAlignment="Left" Margin="436,334,0,0" VerticalAlignment="Top"/>
+
+        <Slider x:Name="l_slider" HorizontalAlignment="Left" Margin="452,398,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="100" ValueChanged="l_slider_ValueChanged" MouseEnter="luv_slider_MouseEnter" MouseLeave="luv_slider_MouseLeave" LargeChange="0.1"/>
+        <Slider x:Name="u_slider" HorizontalAlignment="Left" Margin="452,428,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="100" ValueChanged="u_slider_ValueChanged" MouseEnter="luv_slider_MouseEnter" MouseLeave="luv_slider_MouseLeave" Minimum="-100" LargeChange="0.1"/>
+        <Slider x:Name="vv_slider" HorizontalAlignment="Left" Margin="452,453,0,0" VerticalAlignment="Top" Height="25" Width="255" Maximum="100" ValueChanged="v_slider_ValueChanged" MouseEnter="luv_slider_MouseEnter" MouseLeave="luv_slider_MouseLeave" Minimum="-100" LargeChange="0.1"/>
+        <Label x:Name="l_label" Content="L" HorizontalAlignment="Left" Margin="435,395,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="u_label" Content="U" HorizontalAlignment="Left" Margin="436,422,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="vv_label" Content="V" HorizontalAlignment="Left" Margin="436,450,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="rTextBox" HorizontalAlignment="Left" Height="23" Margin="712,82,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextChanged="rgbTextBox_TextChanged"/>
+        <TextBox x:Name="gTextBox" HorizontalAlignment="Left" Height="23" Margin="712,112,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextChanged="rgbTextBox_TextChanged"/>
+        <TextBox x:Name="bTextBox" HorizontalAlignment="Left" Height="23" Margin="712,140,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextChanged="rgbTextBox_TextChanged"/>
+    </Grid>
+</Window>
