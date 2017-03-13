@@ -33,9 +33,12 @@ namespace Color_Models
             g_slider.Background = new LinearGradientBrush(Colors.Black, Color.FromRgb(0, 255, 0), 0.0);
             b_slider.Background = new LinearGradientBrush(Colors.Black, Color.FromRgb(0, 0, 255), 0.0);
 
-            rTextBox.Text = "0";
-            gTextBox.Text = "0";
-            bTextBox.Text = "0";
+            int[] rgbCMY = ColorConverter.cmyToRGB(100, 0, 0);
+            c_slider.Background = new LinearGradientBrush(Colors.White, Color.FromRgb((byte)rgbCMY[0], (byte)rgbCMY[1], (byte)rgbCMY[2]),0.0);
+            rgbCMY = ColorConverter.cmyToRGB(0, 100, 0);
+            m_slider.Background = new LinearGradientBrush(Colors.White, Color.FromRgb((byte)rgbCMY[0], (byte)rgbCMY[1], (byte)rgbCMY[2]), 0.0);
+            rgbCMY = ColorConverter.cmyToRGB(0, 0, 100);
+            y_slider.Background = new LinearGradientBrush(Colors.White, Color.FromRgb((byte)rgbCMY[0], (byte)rgbCMY[1], (byte)rgbCMY[2]), 0.0);
 
         }
 
@@ -110,6 +113,21 @@ namespace Color_Models
                 gTextBox.Text = Math.Round(g_slider.Value).ToString();
                 bTextBox.Text = Math.Round(b_slider.Value).ToString();
                 #endregion
+                #region CMY Text Boxes
+                cTextBox.Text = Math.Round(c_slider.Value * 100).ToString();
+                mTextBox.Text = Math.Round(m_slider.Value * 100).ToString();
+                yTextBox.Text = Math.Round(y_slider.Value * 100).ToString();
+                #endregion
+                #region HSV Text Boxes
+                hTextBox.Text = Math.Round(h_slider.Value).ToString();
+                sTextBox.Text = Math.Round(s_slider.Value * 100).ToString();
+                vTextBox.Text = Math.Round(v_slider.Value * 100).ToString();
+                #endregion
+                #region LUV Text Boxes
+                lTextBox.Text = Math.Round(l_slider.Value).ToString();
+                uTextBox.Text = Math.Round(u_slider.Value).ToString();
+                vvTextBox.Text = Math.Round(vv_slider.Value).ToString();
+                #endregion
             }
             #region r slider gradient background
             Color rStartGradientColor = Color.FromRgb((byte)0, (byte)g_slider.Value, (byte)b_slider.Value);
@@ -131,6 +149,27 @@ namespace Color_Models
 
         private void cmy_slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            #region c slider gradient background
+            int[] cmyRGB = ColorConverter.cmyToRGB(0, m_slider.Value, y_slider.Value);
+            Color cStartGradientColor = Color.FromRgb((byte)cmyRGB[0], (byte)cmyRGB[1], (byte)cmyRGB[2]);
+            cmyRGB = ColorConverter.cmyToRGB(100, m_slider.Value, y_slider.Value);
+            Color cEndGradientColor = Color.FromRgb((byte)cmyRGB[0], (byte)cmyRGB[1], (byte)cmyRGB[2]);
+            c_slider.Background = new LinearGradientBrush(cStartGradientColor, cEndGradientColor, 0.0);
+            #endregion
+            #region m slider gradient background
+            cmyRGB = ColorConverter.cmyToRGB(c_slider.Value, 0, y_slider.Value);
+            Color mStartGradientColor = Color.FromRgb((byte)cmyRGB[0], (byte)cmyRGB[1], (byte)cmyRGB[2]);
+            cmyRGB = ColorConverter.cmyToRGB(c_slider.Value, 100, y_slider.Value);
+            Color mEndGradientColor = Color.FromRgb((byte)cmyRGB[0], (byte)cmyRGB[1], (byte)cmyRGB[2]);
+            m_slider.Background = new LinearGradientBrush(mStartGradientColor, mEndGradientColor, 0.0);
+            #endregion
+            #region y slider gradient background
+            cmyRGB = ColorConverter.cmyToRGB(c_slider.Value, m_slider.Value, 0);
+            Color yStartGradientColor = Color.FromRgb((byte)cmyRGB[0], (byte)cmyRGB[1], (byte)cmyRGB[2]);
+            cmyRGB = ColorConverter.cmyToRGB(c_slider.Value, m_slider.Value, 100);
+            Color yEndGradientColor = Color.FromRgb((byte)cmyRGB[0], (byte)cmyRGB[1], (byte)cmyRGB[2]);
+            y_slider.Background = new LinearGradientBrush(yStartGradientColor, yEndGradientColor, 0.0);
+            #endregion
             if (cmy)
             {
                 int[] rgb = ColorConverter.cmyToRGB(c_slider.Value, m_slider.Value, y_slider.Value);
@@ -155,6 +194,21 @@ namespace Color_Models
                 rTextBox.Text = Math.Round(r_slider.Value).ToString();
                 gTextBox.Text = Math.Round(g_slider.Value).ToString();
                 bTextBox.Text = Math.Round(b_slider.Value).ToString();
+                #endregion
+                #region CMY Text Boxes
+                cTextBox.Text = Math.Round(c_slider.Value * 100).ToString();
+                mTextBox.Text = Math.Round(m_slider.Value * 100).ToString();
+                yTextBox.Text = Math.Round(y_slider.Value * 100).ToString();
+                #endregion
+                #region HSV Text Boxes
+                hTextBox.Text = Math.Round(h_slider.Value).ToString();
+                sTextBox.Text = Math.Round(s_slider.Value * 100).ToString();
+                vTextBox.Text = Math.Round(v_slider.Value * 100).ToString();
+                #endregion
+                #region LUV Text Boxes
+                lTextBox.Text = Math.Round(l_slider.Value).ToString();
+                uTextBox.Text = Math.Round(u_slider.Value).ToString();
+                vvTextBox.Text = Math.Round(vv_slider.Value).ToString();
                 #endregion
             }
         }
@@ -185,6 +239,21 @@ namespace Color_Models
                 rTextBox.Text = Math.Round(r_slider.Value).ToString();
                 gTextBox.Text = Math.Round(g_slider.Value).ToString();
                 bTextBox.Text = Math.Round(b_slider.Value).ToString();
+                #endregion
+                #region CMY Text Boxes
+                cTextBox.Text = Math.Round(c_slider.Value * 100).ToString();
+                mTextBox.Text = Math.Round(m_slider.Value * 100).ToString();
+                yTextBox.Text = Math.Round(y_slider.Value * 100).ToString();
+                #endregion
+                #region HSV Text Boxes
+                hTextBox.Text = Math.Round(h_slider.Value).ToString();
+                sTextBox.Text = Math.Round(s_slider.Value * 100).ToString();
+                vTextBox.Text = Math.Round(v_slider.Value * 100).ToString();
+                #endregion
+                #region LUV Text Boxes
+                lTextBox.Text = Math.Round(l_slider.Value).ToString();
+                uTextBox.Text = Math.Round(u_slider.Value).ToString();
+                vvTextBox.Text = Math.Round(vv_slider.Value).ToString();
                 #endregion
             }
         }
@@ -223,6 +292,21 @@ namespace Color_Models
                     rTextBox.Text = Math.Round(r_slider.Value).ToString();
                     gTextBox.Text = Math.Round(g_slider.Value).ToString();
                     bTextBox.Text = Math.Round(b_slider.Value).ToString();
+                    #endregion
+                    #region CMY Text Boxes
+                    cTextBox.Text = Math.Round(c_slider.Value * 100).ToString();
+                    mTextBox.Text = Math.Round(m_slider.Value * 100).ToString();
+                    yTextBox.Text = Math.Round(y_slider.Value * 100).ToString();
+                    #endregion
+                    #region HSV Text Boxes
+                    hTextBox.Text = Math.Round(h_slider.Value).ToString();
+                    sTextBox.Text = Math.Round(s_slider.Value * 100).ToString();
+                    vTextBox.Text = Math.Round(v_slider.Value * 100).ToString();
+                    #endregion
+                    #region LUV Text Boxes
+                    lTextBox.Text = Math.Round(l_slider.Value).ToString();
+                    uTextBox.Text = Math.Round(u_slider.Value).ToString();
+                    vvTextBox.Text = Math.Round(vv_slider.Value).ToString();
                     #endregion
                 }
                 else
@@ -268,6 +352,21 @@ namespace Color_Models
                     gTextBox.Text = Math.Round(g_slider.Value).ToString();
                     bTextBox.Text = Math.Round(b_slider.Value).ToString();
                     #endregion
+                    #region CMY Text Boxes
+                    cTextBox.Text = Math.Round(c_slider.Value * 100).ToString();
+                    mTextBox.Text = Math.Round(m_slider.Value * 100).ToString();
+                    yTextBox.Text = Math.Round(y_slider.Value * 100).ToString();
+                    #endregion
+                    #region HSV Text Boxes
+                    hTextBox.Text = Math.Round(h_slider.Value).ToString();
+                    sTextBox.Text = Math.Round(s_slider.Value * 100).ToString();
+                    vTextBox.Text = Math.Round(v_slider.Value * 100).ToString();
+                    #endregion
+                    #region LUV Text Boxes
+                    lTextBox.Text = Math.Round(l_slider.Value).ToString();
+                    uTextBox.Text = Math.Round(u_slider.Value).ToString();
+                    vvTextBox.Text = Math.Round(vv_slider.Value).ToString();
+                    #endregion
                 }
                 else
                 {
@@ -305,6 +404,21 @@ namespace Color_Models
                     rTextBox.Text = Math.Round(r_slider.Value).ToString();
                     gTextBox.Text = Math.Round(g_slider.Value).ToString();
                     bTextBox.Text = Math.Round(b_slider.Value).ToString();
+                    #endregion
+                    #region CMY Text Boxes
+                    cTextBox.Text = Math.Round(c_slider.Value * 100).ToString();
+                    mTextBox.Text = Math.Round(m_slider.Value * 100).ToString();
+                    yTextBox.Text = Math.Round(y_slider.Value * 100).ToString();
+                    #endregion
+                    #region HSV Text Boxes
+                    hTextBox.Text = Math.Round(h_slider.Value).ToString();
+                    sTextBox.Text = Math.Round(s_slider.Value * 100).ToString();
+                    vTextBox.Text = Math.Round(v_slider.Value * 100).ToString();
+                    #endregion
+                    #region LUV Text Boxes
+                    lTextBox.Text = Math.Round(l_slider.Value).ToString();
+                    uTextBox.Text = Math.Round(u_slider.Value).ToString();
+                    vvTextBox.Text = Math.Round(vv_slider.Value).ToString();
                     #endregion
                 }
                 else
@@ -362,6 +476,7 @@ namespace Color_Models
                 l_slider.Value = luv[0];
                 u_slider.Value = luv[1];
                 vv_slider.Value = luv[2];
+                
             }
         }
 
