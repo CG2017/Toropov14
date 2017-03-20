@@ -43,8 +43,9 @@ namespace Lab_2
                 }
             }
             originalColorPictureBox.BackColor = originalColor;
+            colorDialog.Color = originalColor;
         }
-        private void SetColor(PictureBox pictureBox, ref Color color)
+        private void SetColor(PictureBox pictureBox, ref Color color, ColorDialog colorDialog)
         {
             if(colorDialog.ShowDialog() == DialogResult.OK)
             {
@@ -62,12 +63,12 @@ namespace Lab_2
         #region Events Listeners
         private void originalColorPictureBox_Click(object sender, EventArgs e)
         {
-            SetColor(originalColorPictureBox, ref originalColor);
+            SetColor(originalColorPictureBox, ref originalColor, colorDialog);
         }
 
         private void destinationColorPictureBox_Click(object sender, EventArgs e)
         {
-            SetColor(destinationColorPictureBox, ref destinationColor);
+            SetColor(destinationColorPictureBox, ref destinationColor, colorDialog1);
         }
 
         private void replaceBtn_Click(object sender, EventArgs e)
@@ -85,21 +86,7 @@ namespace Lab_2
 
         private void sourcePictureBox_Click(object sender, EventArgs e)
         {
-            if(sourcePictureBox.Image == null)
-            {
-                if(openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    var fileName = openFileDialog.FileName;
-                    sourceImg = Image.FromFile(fileName);
-                    labImg = new LabImg(sourceImg);
-                    ShowImg(sourcePictureBox, sourceImg);
-                    ShowImg(processedPictureBox, sourceImg);
-                }
-            }
-            else
-            {
-                SetOriginalColor(e);
-            }
+            SetOriginalColor(e);
         }
 
         private void radiusTrackBar_ValueChanged(object sender, EventArgs e)
@@ -107,5 +94,17 @@ namespace Lab_2
             radiusLbl.Text = radiusTrackBar.Value.ToString();
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = openFileDialog.FileName;
+                sourceImg = Image.FromFile(fileName);
+                labImg = new LabImg(sourceImg);
+                ShowImg(sourcePictureBox, sourceImg);
+                ShowImg(processedPictureBox, sourceImg);
+            }
+        }
     }
 }

@@ -38,6 +38,8 @@
             this.resetBtn = new System.Windows.Forms.Button();
             this.radiusTrackBar = new System.Windows.Forms.TrackBar();
             this.radiusLbl = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.sourcePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.processedPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.originalColorPictureBox)).BeginInit();
@@ -50,7 +52,7 @@
             this.sourcePictureBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.sourcePictureBox.Location = new System.Drawing.Point(12, 12);
             this.sourcePictureBox.Name = "sourcePictureBox";
-            this.sourcePictureBox.Size = new System.Drawing.Size(602, 412);
+            this.sourcePictureBox.Size = new System.Drawing.Size(769, 526);
             this.sourcePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sourcePictureBox.TabIndex = 0;
             this.sourcePictureBox.TabStop = false;
@@ -59,9 +61,9 @@
             // processedPictureBox
             // 
             this.processedPictureBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.processedPictureBox.Location = new System.Drawing.Point(617, 12);
+            this.processedPictureBox.Location = new System.Drawing.Point(787, 12);
             this.processedPictureBox.Name = "processedPictureBox";
-            this.processedPictureBox.Size = new System.Drawing.Size(602, 412);
+            this.processedPictureBox.Size = new System.Drawing.Size(726, 526);
             this.processedPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.processedPictureBox.TabIndex = 1;
             this.processedPictureBox.TabStop = false;
@@ -73,7 +75,7 @@
             // originalColorPictureBox
             // 
             this.originalColorPictureBox.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.originalColorPictureBox.Location = new System.Drawing.Point(511, 430);
+            this.originalColorPictureBox.Location = new System.Drawing.Point(681, 544);
             this.originalColorPictureBox.Name = "originalColorPictureBox";
             this.originalColorPictureBox.Size = new System.Drawing.Size(100, 50);
             this.originalColorPictureBox.TabIndex = 2;
@@ -83,7 +85,7 @@
             // destinationColorPictureBox
             // 
             this.destinationColorPictureBox.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.destinationColorPictureBox.Location = new System.Drawing.Point(617, 430);
+            this.destinationColorPictureBox.Location = new System.Drawing.Point(787, 544);
             this.destinationColorPictureBox.Name = "destinationColorPictureBox";
             this.destinationColorPictureBox.Size = new System.Drawing.Size(100, 50);
             this.destinationColorPictureBox.TabIndex = 3;
@@ -92,17 +94,17 @@
             // 
             // replaceBtn
             // 
-            this.replaceBtn.Location = new System.Drawing.Point(554, 548);
+            this.replaceBtn.Location = new System.Drawing.Point(724, 662);
             this.replaceBtn.Name = "replaceBtn";
             this.replaceBtn.Size = new System.Drawing.Size(121, 43);
             this.replaceBtn.TabIndex = 4;
-            this.replaceBtn.Text = "Replace";
+            this.replaceBtn.Text = "Change Color";
             this.replaceBtn.UseVisualStyleBackColor = true;
             this.replaceBtn.Click += new System.EventHandler(this.replaceBtn_Click);
             // 
             // resetBtn
             // 
-            this.resetBtn.Location = new System.Drawing.Point(554, 595);
+            this.resetBtn.Location = new System.Drawing.Point(724, 709);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(121, 43);
             this.resetBtn.TabIndex = 5;
@@ -112,7 +114,7 @@
             // 
             // radiusTrackBar
             // 
-            this.radiusTrackBar.Location = new System.Drawing.Point(417, 486);
+            this.radiusTrackBar.Location = new System.Drawing.Point(587, 600);
             this.radiusTrackBar.Maximum = 100;
             this.radiusTrackBar.Name = "radiusTrackBar";
             this.radiusTrackBar.Size = new System.Drawing.Size(408, 56);
@@ -122,17 +124,28 @@
             // radiusLbl
             // 
             this.radiusLbl.AutoSize = true;
-            this.radiusLbl.Location = new System.Drawing.Point(831, 496);
+            this.radiusLbl.Location = new System.Drawing.Point(1001, 610);
             this.radiusLbl.Name = "radiusLbl";
             this.radiusLbl.Size = new System.Drawing.Size(52, 17);
             this.radiusLbl.TabIndex = 8;
             this.radiusLbl.Text = "Radius";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 544);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "File...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 755);
+            this.ClientSize = new System.Drawing.Size(1529, 755);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.radiusLbl);
             this.Controls.Add(this.radiusTrackBar);
             this.Controls.Add(this.resetBtn);
@@ -165,6 +178,8 @@
         private System.Windows.Forms.Button resetBtn;
         private System.Windows.Forms.TrackBar radiusTrackBar;
         private System.Windows.Forms.Label radiusLbl;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
