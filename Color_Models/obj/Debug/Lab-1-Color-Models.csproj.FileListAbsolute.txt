@@ -26,3 +26,4 @@ D:\University\Visual Studio Projects\Toropov14\Color_Models\obj\Debug\MainWindow
 D:\University\Visual Studio Projects\Toropov14\Color_Models\obj\Debug\Color_Models.g.resources
 D:\University\Visual Studio Projects\Toropov14\Color_Models\obj\Debug\Color_Models.Properties.Resources.resources
 D:\University\Visual Studio Projects\Toropov14\Color_Models\obj\Debug\Lab-1-Color-Models.csproj.GenerateResource.Cache
+D:\University\Visual Studio Projects\Toropov14\Color_Models\bin\Debug\ColorMine.dll
