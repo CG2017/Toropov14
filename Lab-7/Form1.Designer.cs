@@ -44,7 +44,7 @@
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -66,7 +66,7 @@
             // readButton
             // 
             this.readButton.Location = new System.Drawing.Point(16, 4);
-            this.readButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.readButton.Margin = new System.Windows.Forms.Padding(4);
             this.readButton.Name = "readButton";
             this.readButton.Size = new System.Drawing.Size(111, 28);
             this.readButton.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.btnClearLines.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClearLines.Location = new System.Drawing.Point(254, 4);
-            this.btnClearLines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClearLines.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearLines.Name = "btnClearLines";
             this.btnClearLines.Size = new System.Drawing.Size(111, 28);
             this.btnClearLines.TabIndex = 2;
@@ -89,7 +89,7 @@
             // btnClipLines
             // 
             this.btnClipLines.Location = new System.Drawing.Point(135, 4);
-            this.btnClipLines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClipLines.Margin = new System.Windows.Forms.Padding(4);
             this.btnClipLines.Name = "btnClipLines";
             this.btnClipLines.Size = new System.Drawing.Size(111, 28);
             this.btnClipLines.TabIndex = 0;
@@ -106,19 +106,19 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(7, 4);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(891, 570);
+            this.tabControl1.Size = new System.Drawing.Size(891, 569);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(883, 541);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(883, 540);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cohen-Sutherland";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -128,10 +128,10 @@
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(909, 580);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(883, 540);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Midpoint";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -141,10 +141,10 @@
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage3.Size = new System.Drawing.Size(909, 580);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Size = new System.Drawing.Size(883, 540);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cyrus-Beck";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -159,7 +159,7 @@
             this.ClientSize = new System.Drawing.Size(902, 627);
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Lab-7";
             this.Resize += new System.EventHandler(this.Form1_Resize);
